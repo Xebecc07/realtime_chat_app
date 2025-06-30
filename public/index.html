@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ChatIt - Real-Time Chat App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="join-screen">
+    <h2>Join a Room</h2>
+    <input id="username" placeholder="Your name" />
+    <input id="room" placeholder="Room name" />
+    <button onclick="joinRoom()">Join</button>
+  </div>
+
+  <div id="chat-screen" class="hidden">
+    <div class="chat-header">
+      <h3 id="room-name"></h3>
+      <button onclick="document.body.classList.toggle('dark')">🌓 Toggle Theme</button>
+    </div>
+    <div id="chat-box"></div>
+    <div class="chat-controls">
+      <input id="message-input" placeholder="Type your message..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <audio id="msgSound" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
